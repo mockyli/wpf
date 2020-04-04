@@ -42,16 +42,16 @@ namespace MS.Internal.Ink
         }
 
         /// <summary> The A vertex of the quad </summary>
-        internal Point A { get { return _A; } set { _A = value; } }
+        internal Point A { get { return _A; } }
         
         /// <summary> The B vertex of the quad </summary>
-        internal Point B { get { return _B; } set { _B = value; } }
+        internal Point B { get { return _B; } }
         
         /// <summary> The C vertex of the quad </summary>
-        internal Point C { get { return _C; } set { _C = value; } }
+        internal Point C { get { return _C; } }
 
         /// <summary> The D vertex of the quad </summary>
-        internal Point D { get { return _D; } set { _D = value; } }
+        internal Point D { get { return _D; } }
 
         // Returns quad's vertex by index where A is of the index 0, B - is 1, etc
         internal Point this[int index]
