@@ -72,6 +72,7 @@
     <Compile Include="$(WpfSharedDir)\Telemetry\Managed\TraceLoggers\ControlsTraceLogger.cs" />
     <Compile Include="MarshalLocal.cs" />
     <Compile Include="Microsoft\Win32\CommonDialog.cs" />
+    <Compile Include="DotnetCampusAttribute.cs" />
     <Compile Include="Microsoft\Win32\FileDialog.cs" />
     <Compile Include="Microsoft\Win32\FileDialogCustomPlace.cs" />
     <Compile Include="Microsoft\Win32\FileDialogCustomPlaces.cs" />
