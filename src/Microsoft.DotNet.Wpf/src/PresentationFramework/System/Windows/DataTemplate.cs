@@ -52,6 +52,8 @@ namespace System.Windows
 
         #region Public Properties
 
+        public object Foo => this;
+
         //-------------------------------------------------------------------
         //
         //  Public Properties
