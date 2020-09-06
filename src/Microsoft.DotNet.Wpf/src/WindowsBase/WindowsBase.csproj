@@ -360,7 +360,6 @@
     <Compile Include="MS\Internal\Security\RightsManagement\NativeRightsManagementAPIsStructures.cs" />
     <Compile Include="MS\Internal\Security\RightsManagement\RightNameExpirationInfoPair.cs" />
     <Compile Include="MS\Internal\Security\RightsManagement\RevocationPoint.cs" />
-    <Compile Include="DotnetCampusAttribute.cs" />
   </ItemGroup>
 
   <!--

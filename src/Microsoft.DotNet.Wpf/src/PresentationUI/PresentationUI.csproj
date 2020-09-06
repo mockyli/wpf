@@ -195,7 +195,6 @@
     <Compile Include="MS\Internal\Documents\Application\TransactionalPackage.cs" />
     <Compile Include="MS\Internal\Documents\Application\WriteableOnDemandPackagePart.cs" />
     <Compile Include="MS\Internal\Documents\Application\WriteableOnDemandStream.cs" />
-    <Compile Include="DotnetCampusAttribute.cs" />
   </ItemGroup>
 
   <ItemGroup>
