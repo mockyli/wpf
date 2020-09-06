@@ -37,12 +37,16 @@
           "description": "Target netcoreapp3.1"
         },
         {
-          "choice": "netcoreapp5.0",
-          "description": "Target netcoreapp5.0"
-        }        
+          "choice": "net5.0",
+          "description": "Target net5.0"
+        }
       ],
-      "replaces": "netcoreapp5.0",
-      "defaultValue": "netcoreapp5.0"
+      "replaces": "FrameworkParameter",
+      "defaultValue": "net5.0"
+    },
+    "UseWindowsDesktopSdk": {
+      "type": "computed",
+      "value": "(Framework == \"netcoreapp3.1\" || Framework == \"netcoreapp3.0\")"
     },
     "langVersion": {
       "type": "parameter",
@@ -67,6 +71,27 @@
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
       "path": "CustomControl1.vb"
+    }
+  ],
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(UseWindowsDesktopSdk)",
+          "exclude": [
+            "Company.WpfCustomControlLibrary.vbproj"
+          ],
+          "rename": {
+            "Company.WpfCustomControlLibrary3x.vbproj": "Company.WpfCustomControlLibrary.vbproj"
+          }
+        },
+        {
+          "condition": "(!UseWindowsDesktopSdk)",
+          "exclude": [
+            "Company.WpfCustomControlLibrary3x.vbproj"
+          ]
+        }
+      ]
     }
   ],
   "defaultName": "WpfCustomControlLibrary1",
