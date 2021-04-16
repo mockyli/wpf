@@ -1,0 +1,18 @@
+name: Publish
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
+    - name: Push
+      uses: actions/upload-artifact@v1
+      with:
+        name: WPF
+        path: ./artifacts/packages/Release/NonShipping
