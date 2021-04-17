@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build
-      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
+      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x64
     - name: Push
       uses: actions/upload-artifact@v1
       with:
