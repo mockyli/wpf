@@ -793,9 +793,8 @@ namespace System.Windows.Media.Imaging
 
             // We will change the _syncObject object in Lock()
             var syncObject = _syncObject = source.SyncObject;
-            try
+            lock (syncObject)
             {
-                Monitor.Enter(syncObject);
                 Guid formatGuid = source.Format.Guid;
 
                 SafeMILHandle internalPalette = new SafeMILHandle();
@@ -825,26 +824,18 @@ namespace System.Windows.Media.Imaging
                 AddDirtyRect(rcFull);
 
                 UnlockWithoutSubscribeToCommittingBatch();
-
-                Monitor.Exit(syncObject);
-
-                if (_hasDirtyRects)
-                {
-                    SubscribeToCommittingBatch();
-
-                    //
-                    // Notify listeners that we have changed.
-                    //
-                    WritePostscript();
-                }
             }
-            finally
+
+            if (_hasDirtyRects)
             {
-                if (Monitor.IsEntered(syncObject))
-                {
-                    Monitor.Exit(syncObject);
-                }
+                SubscribeToCommittingBatch();
+
+                //
+                // Notify listeners that we have changed.
+                //
+                WritePostscript();
             }
+
             EndInit();
         }
 
