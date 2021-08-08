@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="$(WpfCommonDir)\src\System\LocalAppContext.cs" />
     <Compile Include="$(WpfCommonDir)\src\System\AppContextDefaultValues.cs" />
+    <Compile Include="MS\Utility\ColumnDefinition.cs" />
+    <Compile Include="MS\Utility\RowDefinition.cs" />
     <Compile Include="System\AppContextDefaultValues.cs" />
 
     <Compile Include="$(WpfCommonDir)src\System\SR.cs">
@@ -1452,6 +1454,10 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="$(SystemConfigurationConfigurationManagerPackageVersion)" />
     <PackageReference Include="System.Windows.Extensions" Version="$(SystemWindowsExtensionsPackageVersion)" />
     <PackageReference Include="$(SystemIOPackagingPackage)" Version="$(SystemIOPackagingVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CustomFixCompile\" />
   </ItemGroup>
 
     <!-- Including the Microsoft.TextTemplating.targets requires us to manually import Sdk.Targets because

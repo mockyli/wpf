@@ -31,6 +31,24 @@
     <CLRSupport>false</CLRSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
   <Import Project="$(WpfCppProps)" />
   <PropertyGroup Condition="'$(Architecture)'!='arm64'">
     <!-- 
@@ -44,17 +62,18 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <PropertyGroup Condition="'$(Architecture)'!='arm64'">
-    <!-- ARM64 Port - need to exclude this logic for arm64 builds. Instead we will be using the windows\system32 version --> 
+    <!-- ARM64 Port - need to exclude this logic for arm64 builds. Instead we will be using the windows\system32 version -->
     <RedistSourcePath>$(Windows10SdkPath)Redist\D3D\$(Architecture)\$(D3DCompilerDllBaseName)$(D3DCompilerVersion).dll</RedistSourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Architecture)'=='arm64'">
-    <!-- ARM64 Port - turn off the copy operation --> 
+    <!-- ARM64 Port - turn off the copy operation -->
     <IsRedistProject>False</IsRedistProject>
   </PropertyGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{60E8E057-79E1-4860-A015-23C9587434F7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
