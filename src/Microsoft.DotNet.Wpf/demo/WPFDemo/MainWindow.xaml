@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <ListView>
+            <ListViewItem>123</ListViewItem>
+            <ListViewItem Selector.Selectable="False">123</ListViewItem>
+            <ListViewItem>123</ListViewItem>
+            <ListViewItem>123</ListViewItem>
+            <ListViewItem>123</ListViewItem>
+            <ListViewItem>123</ListViewItem>
+            <ListViewItem>123</ListViewItem>
+        </ListView>
     </Grid>
 </Window>
