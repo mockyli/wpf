@@ -25,4 +25,47 @@ namespace WPFDemo
             InitializeComponent();
         }
     }
+
+    class Foo : UIElement
+    {
+        public Foo()
+        {
+            var drawingVisual = new DrawingVisual();
+            var translateTransform = new TranslateTransform();
+            using (var drawingContext = drawingVisual.RenderOpen())
+            {
+                var rectangleGeometry = new RectangleGeometry(new Rect(0, 0, 10, 10));
+
+                drawingContext.PushTransform(translateTransform);
+
+                drawingContext.DrawGeometry(Brushes.Red, null, rectangleGeometry);
+
+                drawingContext.Pop();
+            }
+
+            Visual = drawingVisual;
+
+            SetTranslateTransform(translateTransform);
+        }
+
+        private async void SetTranslateTransform(TranslateTransform translateTransform)
+        {
+            while (true)
+            {
+                translateTransform.X++;
+
+                if (translateTransform.X > 700)
+                {
+                    translateTransform.X = 0;
+                }
+
+                await Task.Delay(TimeSpan.FromMilliseconds(10));
+            }
+        }
+
+        protected override Visual GetVisualChild(int index) => Visual;
+        protected override int VisualChildrenCount => 1;
+
+        private Visual Visual { get; }
+    }
 }

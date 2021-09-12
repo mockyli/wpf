@@ -7,14 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1000">
     <Grid>
-        <ListView>
-            <ListViewItem>123</ListViewItem>
-            <ListViewItem Selector.Selectable="False">123</ListViewItem>
-            <ListViewItem>123</ListViewItem>
-            <ListViewItem>123</ListViewItem>
-            <ListViewItem>123</ListViewItem>
-            <ListViewItem>123</ListViewItem>
-            <ListViewItem>123</ListViewItem>
-        </ListView>
+        <local:Foo x:Name="Foo"></local:Foo>
     </Grid>
 </Window>
