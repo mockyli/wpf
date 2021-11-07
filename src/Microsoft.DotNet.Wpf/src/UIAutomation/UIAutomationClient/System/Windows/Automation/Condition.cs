@@ -44,7 +44,6 @@ namespace System.Windows.Automation
             SafeConditionMemoryHandle sh = new SafeConditionMemoryHandle();
             int size = Marshal.SizeOf(uiaCondition);
 
-            RuntimeHelpers.PrepareConstrainedRegions(); // ensures that the following finally block is atomic
             try { }
             finally
             {
@@ -64,7 +63,6 @@ namespace System.Windows.Automation
 
             int intPtrSize = Marshal.SizeOf(typeof(IntPtr));
 
-            RuntimeHelpers.PrepareConstrainedRegions(); // ensures that the following finally block is atomic
             try { }
             finally
             {

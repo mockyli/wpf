@@ -841,7 +841,7 @@ namespace System.Windows.Markup.Primitives
                         writtenAttributes[property.Name] = property.Name;
                         _writer.WriteStartElement(prefix, item.ObjectType.Name + "." + property.PropertyDescriptor.Name, uri);
 
-                        if (property.IsComposite || property.StringValue.IndexOf("{", StringComparison.Ordinal) == 0)
+                        if (property.IsComposite || property.StringValue.IndexOf('{') == 0)
                         {
                             foreach (MarkupObject subItem in property.Items)
                             {
@@ -1649,13 +1649,13 @@ namespace System.Windows.Markup.Primitives
                         result = "assembly";
                         if (uri.StartsWith(clrUriPrefix, StringComparison.Ordinal))
                         {
-                            string ns = uri.Substring(clrUriPrefix.Length, uri.IndexOf(";", StringComparison.Ordinal) - clrUriPrefix.Length);
+                            ReadOnlySpan<char> ns = uri.AsSpan(clrUriPrefix.Length, uri.IndexOf(';') - clrUriPrefix.Length);
                             StringBuilder r = new StringBuilder();
                             for (int i = 0; i < ns.Length; i++)
                             {
                                 char c = ns[i];
                                 if (c >= 'A' && c <= 'Z')
-                                    r.Append(c.ToString().ToLower(CultureInfo.InvariantCulture));
+                                    r.Append(char.ToLowerInvariant(c));
                             }
                             if (r.Length > 0)
                                 result = r.ToString();

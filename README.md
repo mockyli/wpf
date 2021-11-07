@@ -1,7 +1,7 @@
 # Windows Presentation Foundation (WPF)
-
+[![.NET Foundation](https://img.shields.io/badge/.NET%20Foundation-blueviolet.svg)](https://www.dotnetfoundation.org/)
 [![Build Status](https://dnceng.visualstudio.com/public/_apis/build/status/dotnet/wpf/dotnet-wpf%20CI)](https://dnceng.visualstudio.com/public/_build/latest?definitionId=270)
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dotnet/wpf/blob/master/LICENSE.TXT)
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dotnet/wpf/blob/main/LICENSE.TXT)
 
 Windows Presentation Foundation (WPF) is a UI framework for building Windows desktop applications. WPF supports a broad set of application development features, including an application model, resources, controls, graphics, layout, data binding and documents. WPF uses the Extensible Application Markup Language (XAML) to provide a declarative model for application programming.
 
@@ -9,24 +9,29 @@ WPF applications are based on a vector graphics architecture. This enables appli
 
 See the [WPF Roadmap](roadmap.md) to learn about project priorities, status and ship dates.
 
-[WinForms](https://github.com/dotnet/winforms) is another UI framework for building Windows desktop applications that is supported on .NET Core. WPF and WinForms applications only run on Windows. They are part of the `Microsoft.NET.Sdk.WindowsDesktop` SDK. You are recommended to use [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) to use WPF and WinForms with .NET Core.
+[WinForms](https://github.com/dotnet/winforms) is another UI framework for building Windows desktop applications that is supported on .NET (6.0.x/5.0.x/3.1.x). WPF and WinForms applications only run on Windows. They are part of the `Microsoft.NET.Sdk.WindowsDesktop` SDK. You are recommended to use the most recent version of [Visual Studio](https://visualstudio.microsoft.com/downloads/) to develop WPF and WinForms applications for .NET.  
+
+WPF for ARM64 is new for .NET 6.0 and is supported by NET 6.0 Preview 1 and later. 
+
+To build the WPF repo and contribute features and fixes for .NET 6.0, the most recent [Visual Studio Preview](https://visualstudio.microsoft.com/vs/preview/) is required.  
 
 ## Getting started
 
-* [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+* [.NET 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
+* [.NET Preview SDKs (6.0 Preview 1, 5.0 servicing, and 3.1 servicing)](https://github.com/dotnet/installer)
 * [Getting started instructions](Documentation/getting-started.md)
 * [Contributing guide](Documentation/contributing.md)
 * [Migrating .NET Framework WPF Apps to .NET Core](https://docs.microsoft.com/en-us/dotnet/desktop-wpf/migration/convert-project-from-net-framework)
 
 ## Status
 
-- We are currently in planning for .NET 5. 
+- We are currently developing WPF for .NET 6. 
 - We have completed publishing WPF sources. You can learn more about this at https://github.com/dotnet/wpf/issues/2554. 
 - We have completed porting WPF to .NET Core as part of .NET Core 3.0, you can learn more about what was done [here](https://github.com/dotnet/wpf/issues/1936).
 
 See the [WPF roadmap](roadmap.md) to learn about the schedule for specific WPF components.
 
-We have published few tests and have limited coverage for PRs at this time as a result. We will add more tests in 2019 and 2020, however, it will be a progressive process. 
+We have published few tests and have limited coverage for PRs at this time as a result. We will add more tests in 2021, however, it will be a progressive process. 
 
 The Visual Studio WPF designer is now available as part of Visual Studio 2019. 
 
@@ -34,7 +39,7 @@ The Visual Studio WPF designer is now available as part of Visual Studio 2019.
 
 Some of the best ways to contribute are to try things out, file bugs, join in design conversations, and fix issues.
 
-* This repo defines [contributing guidelines](Documentation/contributing.md) and also follows the more general [.NET Core contributing guide](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/contributing.md).
+* This repo defines [contributing guidelines](Documentation/contributing.md) and also follows the more general [.NET Core contributing guide](https://github.com/dotnet/runtime/blob/main/CONTRIBUTING.md).
 * If you have a question or have found a bug, [file an issue](https://github.com/dotnet/wpf/issues/new).
 * Use [daily builds](Documentation/getting-started.md#installation) if you want to contribute and stay up to date with the team.
 
@@ -72,3 +77,4 @@ Also see info about related [Microsoft .NET Core and ASP.NET Core Bug Bounty Pro
 .NET Core WPF is a [.NET Foundation](https://www.dotnetfoundation.org/projects) project.
 
 See the [.NET home repo](https://github.com/Microsoft/dotnet) to find other .NET-related projects.
+

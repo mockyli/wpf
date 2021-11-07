@@ -38,7 +38,7 @@ namespace System.Xaml.MS.Impl
         }
 
         // Note this, is the only dictionary that we synchronize, because XamlSchemaContext adds to it
-        private ConcurrentDictionary<string, IList<string>> _clrToXmlNs = null;
+        private ConcurrentDictionary<string, IList<string>> _clrToXmlNs;
         internal ConcurrentDictionary<string, IList<string>> ClrToXmlNs
         {
             get
@@ -64,7 +64,7 @@ namespace System.Xaml.MS.Impl
             }
         }
 
-        private Dictionary<string, string> _oldToNewNs = null;
+        private Dictionary<string, string> _oldToNewNs;
         internal Dictionary<string, string> OldToNewNs
         {
             get
@@ -77,7 +77,7 @@ namespace System.Xaml.MS.Impl
             }
         }
 
-        private Dictionary<string, string> _prefixes = null;
+        private Dictionary<string, string> _prefixes;
         internal Dictionary<string, string> Prefixes
         {
             get
@@ -90,7 +90,7 @@ namespace System.Xaml.MS.Impl
             }
         }
 
-        private string _rootNamespace = null;
+        private string _rootNamespace;
         internal string RootNamespace
         {
             get
@@ -436,9 +436,9 @@ namespace System.Xaml.MS.Impl
                 // Calculate the subsume count upfront, since this also serves as our cycle detection
                 _subsumeCount = new Dictionary<string,int>(nsInfo.OldToNewNs.Count);
 
-                Dictionary<string, object> visited = new Dictionary<string, object>();
+                HashSet<string> visited = new HashSet<string>();
 
-                // for every XmlnsCompatAtribute
+                // for every XmlnsCompatAttribute
                 foreach (string newNs in nsInfo.OldToNewNs.Values)
                 {
                     visited.Clear();
@@ -447,11 +447,10 @@ namespace System.Xaml.MS.Impl
                     string ns = newNs;
                     do
                     {
-                        if (visited.ContainsKey(ns))
+                        if (!visited.Add(ns))
                         {
                             throw new XamlSchemaException(SR.Get(SRID.XmlnsCompatCycle, assembly.FullName, ns));
                         }
-                        visited.Add(ns, null);
                         IncrementSubsumeCount(ns);
                         ns = GetNewNs(ns);
                     }

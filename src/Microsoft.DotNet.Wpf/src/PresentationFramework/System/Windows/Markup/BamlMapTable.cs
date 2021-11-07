@@ -139,7 +139,7 @@ namespace System.Windows.Markup
                         probeType.Assembly.FullName == assemblyFullName )
 #else
                     if (probeType.Namespace == clrNamespace)
-#endif  
+#endif
                     {
                         return (short) -probe;
                     }
@@ -1170,7 +1170,7 @@ namespace System.Windows.Markup
                              string       typeFullName,
                          out short        typeId)
         {
-            int dotIndex = typeFullName.LastIndexOf(".", StringComparison.Ordinal);
+            int dotIndex = typeFullName.LastIndexOf('.');
             string typeShortName;
             string typeClrNamespace;
             if (dotIndex >= 0)
@@ -1571,7 +1571,7 @@ namespace System.Windows.Markup
                 return converterType;
             }
 
-            // Reflect for per property type converter , but skip if WinFx props
+            // Reflect for per property type converter , but skip if WinFX props
             Assembly ownerAsm = ownerType.Assembly;
 #if PBTCOMPILER
             if (XamlTypeMapper.AssemblyPF != ownerAsm &&
@@ -1975,5 +1975,3 @@ namespace System.Windows.Markup
 
 
 }
-
-

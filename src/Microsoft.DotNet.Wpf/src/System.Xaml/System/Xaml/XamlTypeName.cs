@@ -66,6 +66,8 @@ namespace System.Xaml.Schema
             }
         }
 
+        internal List<XamlTypeName> TypeArgumentsList => _typeArguments;
+
         public override string ToString()
         {
             return ToString(null);
@@ -242,9 +244,9 @@ namespace System.Xaml.Schema
             }
             if (prefixGenerator == null)
             {
-                result.Append("{");
+                result.Append('{');
                 result.Append(Namespace);
-                result.Append("}");
+                result.Append('}');
             }
             else
             {
@@ -256,7 +258,7 @@ namespace System.Xaml.Schema
                 if (prefix.Length != 0)
                 {
                     result.Append(prefix);
-                    result.Append(":");
+                    result.Append(':');
                 }
             }
             if (HasTypeArgs)
@@ -266,9 +268,9 @@ namespace System.Xaml.Schema
                 string name = GenericTypeNameScanner.StripSubscript(Name, out subscript);
                 result.Append(name);
 
-                result.Append("(");
+                result.Append('(');
                 ConvertListToStringInternal(result, TypeArguments, prefixGenerator);
-                result.Append(")");
+                result.Append(')');
 
                 result.Append(subscript);
             }

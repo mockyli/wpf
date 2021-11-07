@@ -4589,7 +4589,8 @@ namespace System.Windows
                 // First, get clipped, transformed, unrounded size.
                 if (useLayoutRounding)
                 {
-                    if (ltd != null && ltd.TransformedUnroundedDS != null)
+                    // 'transformUnroundedDS' is a non-nullable value type and can never be null.
+                    if (ltd != null)
                     {
                         transformedUnroundedDS = ltd.TransformedUnroundedDS;
                         transformedUnroundedDS.Width = Math.Max(0, transformedUnroundedDS.Width - marginWidth);
@@ -5845,14 +5846,6 @@ namespace System.Windows
                 // STA Requirement are checked in InputManager cctor where InputManager.Current is used in KeyboardNavigation cctor
                 _keyboardNavigation = new KeyboardNavigation();
                 _popupControlService = new PopupControlService();
-
-                // Tooltips should show on Keyboard focus.
-                // This event lets PopupControlService know when keyboard focus changed, so it can
-                // inspect for tooltips. Don't add the event handler when the compat flag is on.
-                if (!AccessibilitySwitches.UseLegacyToolTipDisplay)
-                {
-                    _keyboardNavigation.FocusChanged += _popupControlService.FocusChangedEventHandler;
-                }
             }
 
             internal KeyboardNavigation _keyboardNavigation;

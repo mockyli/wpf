@@ -524,7 +524,8 @@ namespace MS.Win32.PresentationCore
             [DllImport(DllImport.MilCore, EntryPoint = "MILAddRef")]
             internal static extern UInt32 AddRef(SafeReversePInvokeWrapper pIUnknown);
 
-            [DllImport(DllImport.MilCore, EntryPoint = "MILRelease"), ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+            [DllImport(DllImport.MilCore, EntryPoint = "MILRelease")]
+
             internal static extern int Release(IntPtr pIUnkown);
 
             internal static void ReleaseInterface(ref IntPtr ptr)

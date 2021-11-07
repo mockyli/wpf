@@ -503,7 +503,6 @@ namespace MS.Internal.Automation
             }
             else
             {
-                RuntimeHelpers.PrepareConstrainedRegions();
                 bool fRelease = false;
                 try
                 {

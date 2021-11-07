@@ -7,7 +7,7 @@ This document describes the experience of using WPF on .NET Core. The [Developer
 Choose one of these options:
 
 1. [.NET Core 3.1 SDK (recommended)](https://www.microsoft.com/net/download)
-2. [.NET Core 3.1 daily build (latest changes, but less stable)](https://github.com/dotnet/core/blob/master/daily-builds.md)
+2. [.NET Core 3.1 daily build (latest changes, but less stable)](https://github.com/dotnet/core/blob/main/daily-builds.md)
 
 ## Creating new applications
 
@@ -23,14 +23,14 @@ dotnet run
 
 ## Samples
 
-Check out the [WPF for .NET Core 3 samples](https://github.com/dotnet/samples/tree/master/wpf) for HelloWorld example. The existing [WPF for .NET Framework samples](https://github.com/Microsoft/WPF-Samples) have also been updated to dual-target .NET Framework and .NET Core 3.
+Check out the [WPF for .NET Core 3 samples](https://github.com/dotnet/samples/tree/main/wpf) for HelloWorld example. The existing [WPF for .NET Framework samples](https://github.com/Microsoft/WPF-Samples) have also been updated to dual-target .NET Framework and .NET Core 3.
 
 
 ## Documentation
 
 For WPF API documentation, see the [.NET API Browser](https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-3.0).
 
-For conceptual documentation (architecture, how-tos, etc.) most of the [documentation for WPF for .NET Framework](https://docs.microsoft.com/en-us/visualstudio/designers/getting-started-with-wpf?view=vs-2017) applies equally well to WPF for .NET Core 3. The main differences are around project structure and lack of Designer support.
+For conceptual documentation (architecture, how-tos, etc.) most of the [documentation for WPF for .NET Framework](https://docs.microsoft.com/en-us/visualstudio/designers/getting-started-with-wpf) applies equally well to WPF for .NET Core 3. The main differences are around project structure and lack of Designer support.
 
 ## Missing features
 
