@@ -1791,8 +1791,8 @@ namespace System.Windows.Threading
             _hook = new HwndWrapperHook(WndProcHook);
             _window.Value.AddHook(_hook);
 
-            // Verify that the accessibility switches are set prior to any major UI code running.
-            AccessibilitySwitches.VerifySwitches(this);
+            //// Verify that the accessibility switches are set prior to any major UI code running.
+            //AccessibilitySwitches.VerifySwitches(this);
         }
 
         // creates a "sentinel" dispatcher.  It doesn't do anything, and should never
