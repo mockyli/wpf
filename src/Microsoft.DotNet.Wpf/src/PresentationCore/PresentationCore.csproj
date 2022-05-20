@@ -19,6 +19,7 @@
   <ItemGroup>
     <Compile Include="$(WpfCommonDir)\src\System\LocalAppContext.cs" />
     <Compile Include="$(WpfCommonDir)\src\System\AppContextDefaultValues.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="System\AppContextDefaultValues.cs" />
   </ItemGroup>
   <ItemGroup>
